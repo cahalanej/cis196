@@ -1,14 +1,14 @@
 <div class="error-msg">
   <% if @user.errors.any? %>
-    <div id="error_explanation">
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
     </div>
-  <% end %>
+  <%end%>
 </div>
+
 <%= form_for(@user) do |f| %>
 	<div class="field">
     	<p>name</p> 
@@ -22,7 +22,11 @@
     	<p>password</p> 
      	<%= f.text_field :password%>
     </div>
-
+    <div class="field">
+      <p>password confirmation</p> 
+      <%= f.text_field :password_confirmation%>
+    </div>
+  
     <div class="actions">
       <%= f.submit %>
     </div>
