@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   	if @user.save
   		redirect_to users_path
   	else
-  		render 'new'
+      render 'new'
   	end
   end
 
@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     end
   end
 
+  #delete a user
   def destroy
     @user = User.find(params[:id])
     @user.destroy
