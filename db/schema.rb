@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131001130539) do
+ActiveRecord::Schema.define(:version => 20131022095633) do
 
   create_table "tasklists", :force => true do |t|
     t.string   "title"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(:version => 20131001130539) do
   end
 
   add_index "tasklists", ["user_id"], :name => "index_tasklists_on_user_id"
+
+  create_table "todos", :force => true do |t|
+    t.string   "title"
+    t.string   "priority"
+    t.text     "description"
+    t.boolean  "completed"
+    t.integer  "Tasklist_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "todos", ["Tasklist_id"], :name => "index_todos_on_Tasklist_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

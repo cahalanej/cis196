@@ -1,4 +1,7 @@
 Task::Application.routes.draw do
+  resources :todos
+
+
   resources :tasklists
 
   resources :users
