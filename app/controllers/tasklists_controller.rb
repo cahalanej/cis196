@@ -17,8 +17,26 @@ class TasklistsController < ApplicationController
   end
 
   def show
+    @task_list = Tasklist.find(params[:id])
   end
 
   def edit
+    @task_list = Tasklist.find(params[:id])
+  end
+
+  def update
+    @task_list = Tasklist.find(params[:id])
+    if @task_list.update_attributes(params[:tasklist])
+      redirect_to tasklist_path(@task_list.id)
+    else
+      render 'edit'
+    end
+  end
+
+  #delete a user
+  def destroy
+    @task_list = Tasklist.find(params[:id])
+    @task_list.destroy
+    redirect_to tasklists_path
   end
 end
