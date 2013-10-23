@@ -1,6 +1,10 @@
 class TasklistsController < ApplicationController
   def index
-  	@task_lists = Tasklist.all
+    if user_signed_in?
+  	 @task_lists = Tasklist.where(user_id: current_user)
+    else
+      @task_lists = Tasklist.all
+    end
   end
 
   def new
@@ -9,11 +13,15 @@ class TasklistsController < ApplicationController
 
   def create
   	@task_list = Tasklist.new(params[:tasklist])
-  	if @task_list.save
-  		redirect_to tasklists_path
-  	else
-  		render 'new'
-  	end
+  	if(@task_list.user_id != current_user.id)
+      redirect_to root_path
+    else
+      if @task_list.save
+    		redirect_to tasklists_path
+    	else
+    		render 'new'
+    	end
+    end
   end
 
   def show

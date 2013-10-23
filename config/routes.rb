@@ -1,14 +1,22 @@
 Task::Application.routes.draw do
+
+  devise_for :users
+
   resources :todos
 
 
   resources :tasklists
 
-  resources :users
+  #resources :users
 
   get "landing_pages/home"
 
  root :to => 'landing_pages#home'
+  
+  # devise_scope :user do
+  #   root to: "devise/sessions#new"
+  # end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

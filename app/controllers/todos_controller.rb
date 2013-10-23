@@ -1,10 +1,14 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all
+    if user_signed_in?
+      @todos = Todo.all
+    else 
+      @todos = []
+    end
   end
 
   def show
-    @todo = Todo.find(params[:id])
+      @todo = Todo.find(params[:id])
   end
 
   def new
