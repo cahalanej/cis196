@@ -61,7 +61,7 @@ config.action_mailer.delivery_method = :smtp
     :port           => '587',
     :user_name  => ENV['SENDGRID_USERNAME'],
     :password   => ENV['SENDGRID_PASSWORD'],
-    :domain         => ENV['SENDGRID_DOMAIN']
+    :domain         => "vast-cove-8738.herokapp.com"
   }
   # Enable threaded mode
   # config.threadsafe!
