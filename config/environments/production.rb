@@ -58,7 +58,7 @@ Task::Application.configure do
     :port           => '587',
     :user_name  => ENV['SENDGRID_USERNAME'],
     :password   => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'http://vast-cove-8738.herokuapp.com'
+    :domain         => "http://vast-cove-8738.herokuapp.com"
   }
   # Enable threaded mode
   # config.threadsafe!
