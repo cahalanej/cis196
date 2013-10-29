@@ -8,6 +8,7 @@ class Notifications < ActionMailer::Base
   #
   def new_tasklist(tasklist)
     @greeting = "Hi"
+    @id = "id"
 
     mail to: tasklist.user.email
   end
