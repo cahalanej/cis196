@@ -4,7 +4,7 @@ gem 'rails', '3.2.12'
 
 
 gem 'devise', '3.0'
-gem "rails_admin"
+gem 'letter_opener', github: 'ryanb/letter_opener'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
