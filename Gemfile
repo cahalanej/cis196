@@ -4,12 +4,13 @@ gem 'rails', '3.2.12'
 
 
 gem 'devise', '3.0'
-gem 'letter_opener', github: 'ryanb/letter_opener'
+gem 'newrelic_rpm'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
 	gem 'sqlite3'
+	gem 'letter_opener', github: 'ryanb/letter_opener'
 end
 
 group :production do
