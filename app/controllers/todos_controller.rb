@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
   def index
     if user_signed_in?
-      @todos = Todo.all
+      @todos = Todo.incomplete
     else 
       @todos = []
     end
