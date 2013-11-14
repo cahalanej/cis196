@@ -1,4 +1,4 @@
-<h1>Listing todos</h1>
+<h1 id="title">Listing todos</h1>
 
 <table>
   <tr>
@@ -10,7 +10,7 @@
   </tr>
 
 <% @todos.high_priority.each do |todo| %>
-  <tr>
+  <tr class="row">
     <td><%= todo.title %></td>
     <td><%= todo.priority %></td>
     <td><%= todo.description %></td>
@@ -23,7 +23,7 @@
 <% end %>
 
 <% @todos.med_priority.each do |todo| %>
-  <tr>
+  <tr class="row">
     <td><%= todo.title %></td>
     <td><%= todo.priority %></td>
     <td><%= todo.description %></td>
@@ -36,7 +36,7 @@
 <% end %>
 
 <% @todos.low_priority.each do |todo| %>
-  <tr>
+  <tr class="row">
     <td><%= todo.title %></td>
     <td><%= todo.priority %></td>
     <td><%= todo.description %></td>
