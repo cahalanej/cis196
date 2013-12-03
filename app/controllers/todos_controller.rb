@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   def index
+    @todo = Todo.new
     if user_signed_in?
       @todos = Todo.incomplete
     else 
@@ -22,11 +23,10 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(params[:todo])
     if @todo.save
-      redirect_to todos_path  
+      render :partial=>"todo", :object => @todo
     else
       render 'new'
     end
-
   end
 
   def update
